@@ -1,0 +1,57 @@
+package com.waylau.spark.java.samples.sql;
+
+import com.waylau.spark.java.samples.common.Person;
+import org.apache.spark.sql.SparkSession;
+import org.apache.spark.sql.Dataset;
+import org.apache.spark.sql.Encoder;
+import org.apache.spark.sql.Encoders;
+import org.apache.spark.sql.SaveMode;
+
+import java.util.List;
+import java.util.ArrayList;
+
+import com.waylau.spark.java.samples.common.Person;
+
+public class WriteCVSExample {
+    public static void main(String[] args) {
+        SparkSession sparkSession = SparkSession.builder()
+                .appName("WriteCVS") // 设置应用名称
+                .master("local") // 本地单线程运行
+                .getOrCreate();
+
+        // 创建Java Bean
+        Person person01 = new Person();
+        person01.setName("Way Lau");
+        person01.setAge(35);
+        person01.setHomePage("https://waylau.com");
+
+        Person person02 = new Person();
+        person02.setName("Andy Huang");
+        person02.setAge(25);
+        person02.setHomePage("https://waylau.com/books");
+
+        List<Person> personList = new ArrayList<>();
+        personList.add(person01);
+        personList.add(person02);
+
+        // 创建Java Bean的编码器
+        Encoder<Person> personEncoder = Encoders.bean(Person.class);
+
+        // 转为Dataset
+        Dataset<Person> javaBeanListDS =
+                sparkSession.createDataset(personList, personEncoder);
+
+        // 导出为CSV文件
+        javaBeanListDS.write().format("csv") // 文件格式
+                .mode(SaveMode.Overwrite) // 如果第一次生成了，后续会覆盖
+                .option("header", "true")
+                .save("target/outfile/people"); // 保存的文件所在的目录路径
+
+        // 上述导出方式等同于下面的快捷方式：
+        // 导出为CSV文件
+        javaBeanListDS.write()
+                .mode(SaveMode.Overwrite) // 如果第一次生成了，后续会覆盖
+                .option("header", "true")
+                .csv("target/outfile/people"); // 保存的文件所在的目录路径
+    }
+}
