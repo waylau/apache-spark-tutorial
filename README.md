@@ -14,6 +14,7 @@
 
 * [Spark下载、安装](https://developer.huawei.com/consumer/cn/forum/topic/0202568822299090741?fid=23)
 * [Spark应用初探](https://developer.huawei.com/consumer/cn/forum/topic/0201568823403320732?fid=23)
+* [Spark导出数据到CSV文件](https://developer.huawei.com/consumer/cn/forum/topic/0202620883150950010?fid=23)
 * 未完待续...
 
 ## Samples 示例
