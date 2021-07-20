@@ -1,6 +1,5 @@
 package com.waylau.spark.java.samples.sql;
 
-import com.waylau.spark.java.samples.common.Person;
 import org.apache.spark.sql.SparkSession;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Encoder;
@@ -53,5 +52,8 @@ public class WriteCVSExample {
                 .mode(SaveMode.Overwrite) // 如果第一次生成了，后续会覆盖
                 .option("header", "true")
                 .csv("target/outfile/people"); // 保存的文件所在的目录路径
+
+        // 关闭SparkSession
+        sparkSession.stop();
     }
 }
