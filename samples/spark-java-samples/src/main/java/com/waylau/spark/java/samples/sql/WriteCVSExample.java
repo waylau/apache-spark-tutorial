@@ -11,6 +11,12 @@ import java.util.ArrayList;
 
 import com.waylau.spark.java.samples.common.Person;
 
+/**
+ * Write CVS Example
+ * 
+ * @since 1.0.0 2021年7月19日
+ * @author <a href="https://waylau.com">Way Lau</a>
+ */
 public class WriteCVSExample {
     public static void main(String[] args) {
         SparkSession sparkSession = SparkSession.builder()
