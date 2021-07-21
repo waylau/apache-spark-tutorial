@@ -15,12 +15,18 @@
 * [Spark下载、安装](https://developer.huawei.com/consumer/cn/forum/topic/0202568822299090741?fid=23)
 * [Spark应用初探](https://developer.huawei.com/consumer/cn/forum/topic/0201568823403320732?fid=23)
 * [Spark导出数据到CSV文件](https://developer.huawei.com/consumer/cn/forum/topic/0202620883150950010?fid=23)
+* [Spark累加器LongAccumulator的使用](https://developer.huawei.com/consumer/cn/forum/topic/0202622461925310080?fid=23)
+* [Spark累加器DoubleAccumulator的使用](https://developer.huawei.com/consumer/cn/forum/topic/0202622590853530085?fid=23)
+* [Spark累加器CollectionAccumulator的使用](https://developer.huawei.com/consumer/cn/forum/topic/0202622591182960086?fid=23)
 * 未完待续...
 
 ## Samples 示例
 
 
 * [Spark导出数据到CSV文件](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/sql/WriteCVSExample.java)
+* [Spark累加器LongAccumulator的使用](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/util/LongAccumulatorSample.java)
+* [Spark累加器DoubleAccumulator的使用](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/util/DoubleAccumulatorSample.java)
+* [Spark累加器CollectionAccumulator的使用](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/util/CollectionAccumulatorSample.java)
 * 未完待续...
 
 
