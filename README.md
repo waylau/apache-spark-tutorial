@@ -18,6 +18,7 @@
 * [Spark累加器LongAccumulator的使用](https://developer.huawei.com/consumer/cn/forum/topic/0202622461925310080?fid=23)
 * [Spark累加器DoubleAccumulator的使用](https://developer.huawei.com/consumer/cn/forum/topic/0202622590853530085?fid=23)
 * [Spark累加器CollectionAccumulator的使用](https://developer.huawei.com/consumer/cn/forum/topic/0202622591182960086?fid=23)
+* [启动Spark应用的方式](https://developer.huawei.com/consumer/cn/forum/topic/0202623507783170122?fid=23)
 * 未完待续...
 
 ## Samples 示例
@@ -27,6 +28,8 @@
 * [Spark累加器LongAccumulator的使用](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/util/LongAccumulatorSample.java)
 * [Spark累加器DoubleAccumulator的使用](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/util/DoubleAccumulatorSample.java)
 * [Spark累加器CollectionAccumulator的使用](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/util/CollectionAccumulatorSample.java)
+* [SparkLauncher示例](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/launcher/SparkLauncherSample.java)
+* [InProcessLauncherSample示例](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/launcher/InProcessLauncher.java)
 * 未完待续...
 
 
