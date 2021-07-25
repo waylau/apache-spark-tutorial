@@ -19,6 +19,8 @@
 * [Spark累加器DoubleAccumulator的使用](https://developer.huawei.com/consumer/cn/forum/topic/0202622590853530085?fid=23)
 * [Spark累加器CollectionAccumulator的使用](https://developer.huawei.com/consumer/cn/forum/topic/0202622591182960086?fid=23)
 * [启动Spark应用的方式](https://developer.huawei.com/consumer/cn/forum/topic/0202623507783170122?fid=23)
+* [Spark广播变量](https://developer.huawei.com/consumer/cn/forum/topic/0202624224916630149?fid=23)
+* [Spark RDD入门](https://developer.huawei.com/consumer/cn/forum/topic/0201624386890690172?fid=23)
 * 未完待续...
 
 ## Samples 示例
@@ -30,6 +32,8 @@
 * [Spark累加器CollectionAccumulator的使用](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/util/CollectionAccumulatorSample.java)
 * [SparkLauncher示例](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/launcher/SparkLauncherSample.java)
 * [InProcessLauncherSample示例](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/launcher/InProcessLauncher.java)
+* [Broadcast 示例](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/broadcast/BroadcastSample.java)
+* [InProcessLauncherSample示例](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/rdd/JavaRddBasicSample.java)
 * 未完待续...
 
 
