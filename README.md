@@ -35,7 +35,8 @@
 * [SparkLauncher示例](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/launcher/SparkLauncherSample.java)
 * [InProcessLauncherSample示例](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/launcher/InProcessLauncher.java)
 * [Broadcast 示例](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/broadcast/BroadcastSample.java)
-* [InProcessLauncherSample示例](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/rdd/JavaRddBasicSample.java)
+* [RDD基本操作示例](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/rdd/JavaRddBasicSample.java)
+* [RDD Transformation和Action基本操作示例](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/rdd/JavaRddBasicOperationSample.java)
 * 未完待续...
 
 
