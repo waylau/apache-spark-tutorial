@@ -21,6 +21,8 @@
 * [启动Spark应用的方式](https://developer.huawei.com/consumer/cn/forum/topic/0202623507783170122?fid=23)
 * [Spark广播变量](https://developer.huawei.com/consumer/cn/forum/topic/0202624224916630149?fid=23)
 * [Spark RDD入门](https://developer.huawei.com/consumer/cn/forum/topic/0201624386890690172?fid=23)
+* [Spark RDD基本操作](https://developer.huawei.com/consumer/cn/forum/topic/0201627152644060234?fid=23)
+* [Spark RDD Shuffle操作](https://developer.huawei.com/consumer/cn/forum/topic/0202627152820110215?fid=23)
 * 未完待续...
 
 ## Samples 示例
