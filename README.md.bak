@@ -23,7 +23,6 @@
 * [Spark RDD入门](https://developer.huawei.com/consumer/cn/forum/topic/0201624386890690172?fid=23)
 * [Spark RDD基本操作](https://developer.huawei.com/consumer/cn/forum/topic/0201627152644060234?fid=23)
 * [Spark RDD Shuffle操作](https://developer.huawei.com/consumer/cn/forum/topic/0202627152820110215?fid=23)
-* [深入理解Spark RDD原理](https://developer.huawei.com/consumer/cn/forum/topic/0202628556358740265?fid=23)
 * 未完待续...
 
 ## Samples 示例
@@ -37,7 +36,7 @@
 * [InProcessLauncherSample示例](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/launcher/InProcessLauncher.java)
 * [Broadcast 示例](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/broadcast/BroadcastSample.java)
 * [RDD基本操作示例](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/rdd/JavaRddBasicSample.java)
-* [RDD Transformation和Action基本操作示例](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/rdd/JavaRddBasicOperationSample.java)
+* [RDD Transformation和Action基本操作示例](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/rdd/JavaRddBasicSample.java)
 * 未完待续...
 
 
