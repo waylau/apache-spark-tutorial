@@ -24,6 +24,8 @@
 * [Spark RDD基本操作](https://developer.huawei.com/consumer/cn/forum/topic/0201627152644060234?fid=23)
 * [Spark RDD Shuffle操作](https://developer.huawei.com/consumer/cn/forum/topic/0202627152820110215?fid=23)
 * [深入理解Spark RDD原理](https://developer.huawei.com/consumer/cn/forum/topic/0202628556358740265?fid=23)
+* [Spark调度管理之资源分配](https://developer.huawei.com/consumer/cn/forum/topic/0202629577348060308?fid=23)
+* [Spark调度管理之作业调度](https://developer.huawei.com/consumer/cn/forum/topic/0201629622395410333?fid=23)
 * 未完待续...
 
 ## Samples 示例
