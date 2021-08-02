@@ -27,12 +27,12 @@ public class WriteCVSExample {
         // 创建Java Bean
         Person person01 = new Person();
         person01.setName("Way Lau");
-        person01.setAge(35);
+        person01.setAge(35L);
         person01.setHomePage("https://waylau.com");
 
         Person person02 = new Person();
         person02.setName("Andy Huang");
-        person02.setAge(25);
+        person02.setAge(25L);
         person02.setHomePage("https://waylau.com/books");
 
         List<Person> personList = new ArrayList<>();
