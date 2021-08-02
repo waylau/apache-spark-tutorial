@@ -26,6 +26,12 @@
 * [深入理解Spark RDD原理](https://developer.huawei.com/consumer/cn/forum/topic/0202628556358740265?fid=23)
 * [Spark调度管理之资源分配](https://developer.huawei.com/consumer/cn/forum/topic/0202629577348060308?fid=23)
 * [Spark调度管理之作业调度](https://developer.huawei.com/consumer/cn/forum/topic/0201629622395410333?fid=23)
+* [Spark SQL概述](https://developer.huawei.com/consumer/cn/forum/topic/0202630480491580330?fid=23)
+* [Spark SQL之Dataset与DataFrame](https://developer.huawei.com/consumer/cn/forum/topic/0202630480727520331?fid=23)
+* [Spark SQL之DataFrame入门操作](https://developer.huawei.com/consumer/cn/forum/topic/0201633012983700432?fid=23)
+* [Spark SQL之Dataset入门操作](https://developer.huawei.com/consumer/cn/forum/topic/0201633040938970437?fid=23)
+* [Spark SQL之基于DataFrame创建临时视图](https://developer.huawei.com/consumer/cn/forum/topic/0202633194774890394?fid=23)
+* [Spark SQL之RDD转为Dataset](https://developer.huawei.com/consumer/cn/forum/topic/0201633208926640450?fid=23)
 * 未完待续...
 
 ## Samples 示例
@@ -40,6 +46,10 @@
 * [Broadcast 示例](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/broadcast/BroadcastSample.java)
 * [RDD基本操作示例](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/rdd/JavaRddBasicSample.java)
 * [RDD Transformation和Action基本操作示例](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/rdd/JavaRddBasicOperationSample.java)
+* [DataFrame基本操作示例](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/sql/DataFrameBasicExample.java)
+* [Dataset基本操作示例](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/sql/DatasetBasicExample.java)
+* [基于DataFrame创建临时视图](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/sql/DataFrameTempViewExample.java)
+* [RDD转为Dataset](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/sql/DatasetSchemaExample.java)
 * 未完待续...
 
 
