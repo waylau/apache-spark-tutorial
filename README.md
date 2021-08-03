@@ -32,6 +32,8 @@
 * [Spark SQL之Dataset入门操作](https://developer.huawei.com/consumer/cn/forum/topic/0201633040938970437?fid=23)
 * [Spark SQL之基于DataFrame创建临时视图](https://developer.huawei.com/consumer/cn/forum/topic/0202633194774890394?fid=23)
 * [Spark SQL之RDD转为Dataset](https://developer.huawei.com/consumer/cn/forum/topic/0201633208926640450?fid=23)
+* [Spark SQL之Apache Parquet数据源的读取和写入](https://developer.huawei.com/consumer/cn/forum/topic/0202634018676920418?fid=23)
+* [Apache Parquet列式存储格式介绍](https://waylau.com/about-apache-parquet/)
 * 未完待续...
 
 ## Samples 示例
@@ -50,6 +52,7 @@
 * [Dataset基本操作示例](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/sql/DatasetBasicExample.java)
 * [基于DataFrame创建临时视图](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/sql/DataFrameTempViewExample.java)
 * [RDD转为Dataset](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/sql/DatasetSchemaExample.java)
+* [Apache Parquet数据源的读取和写入](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/sql/DataSourceParquetExample.java)
 * 未完待续...
 
 
