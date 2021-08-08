@@ -1,30 +1,45 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.waylau.spark</groupId>
-    <artifactId>spark-java-samples</artifactId>
-    <version>1.0.0</version>
-    <name>spark-java-samples</name>
-    <packaging>jar</packaging>
-    <organization>
-        <name>waylau.com</name>
-        <url>https://waylau.com</url>
-    </organization>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.waylau.spark</groupId>
+	<artifactId>spark-java-samples</artifactId>
+	<version>1.0.0</version>
+	<name>spark-java-samples</name>
+	<packaging>jar</packaging>
+	<organization>
+		<name>waylau.com</name>
+		<url>https://waylau.com</url>
+	</organization>
 
-    <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <scala.version>2.12</scala.version>
-        <spark.version>3.1.2</spark.version>
-    </properties>
-    <dependencies>
-        <dependency>
-            <!-- Spark dependency -->
-            <groupId>org.apache.spark</groupId>
-            <artifactId>spark-sql_${scala.version}</artifactId>
-            <version>${spark.version}</version>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<scala.version>2.12</scala.version>
+		<spark.version>3.1.2</spark.version>
+		<mysql.version>8.0.26</mysql.version>
+	</properties>
+	<dependencies>
+		<!-- Spark dependency -->
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-sql_${scala.version}</artifactId>
+			<version>${spark.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-hive_${scala.version}</artifactId>
+			<version>${spark.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Database dependency -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.version}</version>
+		</dependency>
+	</dependencies>
 
 </project>

@@ -14,7 +14,6 @@
 
 * [Spark下载、安装](https://developer.huawei.com/consumer/cn/forum/topic/0202568822299090741?fid=23)
 * [Spark应用初探](https://developer.huawei.com/consumer/cn/forum/topic/0201568823403320732?fid=23)
-* [Spark导出数据到CSV文件](https://developer.huawei.com/consumer/cn/forum/topic/0202620883150950010?fid=23)
 * [Spark累加器LongAccumulator的使用](https://developer.huawei.com/consumer/cn/forum/topic/0202622461925310080?fid=23)
 * [Spark累加器DoubleAccumulator的使用](https://developer.huawei.com/consumer/cn/forum/topic/0202622590853530085?fid=23)
 * [Spark累加器CollectionAccumulator的使用](https://developer.huawei.com/consumer/cn/forum/topic/0202622591182960086?fid=23)
@@ -32,14 +31,20 @@
 * [Spark SQL之Dataset入门操作](https://developer.huawei.com/consumer/cn/forum/topic/0201633040938970437?fid=23)
 * [Spark SQL之基于DataFrame创建临时视图](https://developer.huawei.com/consumer/cn/forum/topic/0202633194774890394?fid=23)
 * [Spark SQL之RDD转为Dataset](https://developer.huawei.com/consumer/cn/forum/topic/0201633208926640450?fid=23)
-* [Spark SQL之Apache Parquet数据源的读取和写入](https://developer.huawei.com/consumer/cn/forum/topic/0202634018676920418?fid=23)
 * [Apache Parquet列式存储格式介绍](https://waylau.com/about-apache-parquet/)
+* [Spark SQL之Apache Parquet数据源的读取和写入](https://developer.huawei.com/consumer/cn/forum/topic/0202634018676920418?fid=23)
+* [Apache Hive数据仓库介绍](https://developer.huawei.com/consumer/cn/forum/topic/0201634752549850505?fid=23)
+* [Spark SQL之使用Apache Hive](https://developer.huawei.com/consumer/cn/forum/topic/0202635471716910045?fid=23)
+* [Spark SQL之使用JDBC操作数据库](https://developer.huawei.com/consumer/cn/forum/topic/0202635607847820058?fid=23)
+* [Spark SQL之读取二进制文件](https://developer.huawei.com/consumer/cn/forum/topic/0202635626764400066?fid=23)
+* [Spark导出数据到CSV文件](https://developer.huawei.com/consumer/cn/forum/topic/0202620883150950010?fid=23)
+* [Spark Streaming概述](https://developer.huawei.com/consumer/cn/forum/topic/0202636427881730132?fid=23)
 * 未完待续...
 
 ## Samples 示例
 
 
-* [Spark导出数据到CSV文件](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/sql/WriteCVSExample.java)
+
 * [Spark累加器LongAccumulator的使用](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/util/LongAccumulatorSample.java)
 * [Spark累加器DoubleAccumulator的使用](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/util/DoubleAccumulatorSample.java)
 * [Spark累加器CollectionAccumulator的使用](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/util/CollectionAccumulatorSample.java)
@@ -53,6 +58,10 @@
 * [基于DataFrame创建临时视图](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/sql/DataFrameTempViewExample.java)
 * [RDD转为Dataset](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/sql/DatasetSchemaExample.java)
 * [Apache Parquet数据源的读取和写入](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/sql/DataSourceParquetExample.java)
+* [使用Apache Hive](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/sql/DataSourceHiveExample.java)
+* [使用JDBC操作数据库](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/sql/DataSourceJDBCExample.java)
+* [读取二进制文件](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/sql/DataSourceBinaryFile.java)
+* [Spark导出数据到CSV文件](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/sql/WriteCVSExample.java)
 * 未完待续...
 
 
