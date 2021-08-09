@@ -33,7 +33,12 @@
 			<version>${spark.version}</version>
 			<scope>provided</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-streaming_${scala.version}</artifactId>
+			<version>${spark.version}</version>
+			<scope>provided</scope>
+		</dependency>
 		<!-- Database dependency -->
 		<dependency>
 			<groupId>mysql</groupId>
