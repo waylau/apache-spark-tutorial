@@ -16,20 +16,20 @@ import scala.Tuple2;
 import java.util.Arrays;
 
 /**
- * SparkStreaming Socket Sample
+ * SparkStreaming Wimdow Sample
  * 
  * @author <a href="https://waylau.com">Way Lau</a>
  * @since 2021-08-09
  */
 
-public class SparkStreamingSocketSample {
+public class SparkStreamingWimdowSample {
 
 	public static void main(String[] args)
 			throws InterruptedException {
 		// 配置
 		SparkConf conf = new SparkConf()
 				.setMaster("local[*]") // 本地多线程运行。不能设置成单线程
-				.setAppName("SparkStreamingSocket");// 设置应用名称
+				.setAppName("SparkStreamingWimdow");// 设置应用名称
 
 		// Streaming上下文，每隔10秒执行一次获取批量数据然后处理这些数据
 		JavaStreamingContext javaStreamingContext =
@@ -51,9 +51,11 @@ public class SparkStreamingSocketSample {
 		JavaPairDStream<String, Integer> pairs =
 				words.mapToPair(s -> new Tuple2<>(s, 1));
 
-		JavaPairDStream<String, Integer> wordCounts =
-				pairs.reduceByKey((i1, i2) -> i1 + i2);
-
+		// 每10秒来统计最后30秒数据
+		JavaPairDStream<String, Integer> wordCounts = pairs
+				.reduceByKeyAndWindow((i1, i2) -> i1 + i2,
+						Durations.seconds(30), // 窗口长度
+						Durations.seconds(10)); // 滑动间隔
 		// 输出计数
 		wordCounts.print();
 

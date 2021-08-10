@@ -40,6 +40,8 @@
 * [Spark导出数据到CSV文件](https://developer.huawei.com/consumer/cn/forum/topic/0202620883150950010?fid=23)
 * [Spark Streaming概述](https://developer.huawei.com/consumer/cn/forum/topic/0202636427881730132?fid=23)
 * [Spark Streaming统计来自Socket数据流的词频](https://developer.huawei.com/consumer/cn/forum/topic/0201639135765210068?fid=23)
+* [Spark Streaming窗口操作](https://developer.huawei.com/consumer/cn/forum/topic/0202639686793340267?fid=23)
+* [Spark Structured Streaming概述](https://developer.huawei.com/consumer/cn/forum/topic/0202639990757790283?fid=23)
 * 未完待续...
 
 ## Samples 示例
@@ -63,7 +65,8 @@
 * [使用JDBC操作数据库](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/sql/DataSourceJDBCExample.java)
 * [读取二进制文件](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/sql/DataSourceBinaryFile.java)
 * [Spark导出数据到CSV文件](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/sql/WriteCVSExample.java)
-* [Spark Streaming统计来自Socket数据流的词频](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/sql/SparkStreamingSocketSample.java)
+* [Spark Streaming统计来自Socket数据流的词频](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/streaming/SparkStreamingSocketSample.java)
+* [Spark Streaming窗口操作](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/streaming/SparkStreamingWimdowSample.java)
 * 未完待续...
 
 
