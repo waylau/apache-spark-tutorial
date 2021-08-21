@@ -43,6 +43,11 @@
 * [Spark Streaming窗口操作](https://developer.huawei.com/consumer/cn/forum/topic/0202639686793340267?fid=23)
 * [Spark Structured Streaming概述](https://developer.huawei.com/consumer/cn/forum/topic/0202639990757790283?fid=23)
 * [Spark Structured Streaming统计来自Socket数据流的词频](https://developer.huawei.com/consumer/cn/forum/topic/0201640617749310121?fid=23)
+* [Spark Structured Streaming窗口操作](https://developer.huawei.com/consumer/cn/forum/topic/0201647684921030332?fid=23)
+* [在Spark中自定义Log4j配置](https://developer.huawei.com/consumer/cn/forum/topic/0201647777007740340?fid=23)
+* [Spark MLlib机器学习库概述](https://developer.huawei.com/consumer/cn/forum/topic/0201648414415760370?fid=23)
+* [Spark MLlib之Estimator、Transformer和Param使用示例](https://developer.huawei.com/consumer/cn/forum/topic/0201648630447880382?fid=23)
+* [Spark MLlib之ML Pipeline使用示例](https://developer.huawei.com/consumer/cn/forum/topic/0202648630694530630?fid=23)
 * 未完待续...
 
 ## Samples 示例
@@ -69,6 +74,9 @@
 * [Spark Streaming统计来自Socket数据流的词频](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/streaming/SparkStreamingSocketSample.java)
 * [Spark Streaming窗口操作](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/streaming/SparkStreamingWimdowSample.java)
 * [Structured Streaming统计来自Socket数据流的词频](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/sql/streaming/StructuredStreamingSocketSample.java)
+* [Structured Streaming窗口操作](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/sql/streaming/StructuredStreamingWindowSample.java)
+* [Estimator、Transformer和Param使用示例](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/sql/ml/EstimatorTransformerParamExample.java)
+* [ML Pipeline使用示例](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/sql/ml/PipelineExample.java)
 * 未完待续...
 
 
