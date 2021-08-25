@@ -46,8 +46,11 @@
 * [Spark Structured Streaming窗口操作](https://developer.huawei.com/consumer/cn/forum/topic/0201647684921030332?fid=23)
 * [在Spark中自定义Log4j配置](https://developer.huawei.com/consumer/cn/forum/topic/0201647777007740340?fid=23)
 * [Spark MLlib机器学习库概述](https://developer.huawei.com/consumer/cn/forum/topic/0201648414415760370?fid=23)
+* [Spark MLlib之ML Pipeline详解](https://developer.huawei.com/consumer/cn/forum/topic/0202652669139340720?fid=23)
 * [Spark MLlib之Estimator、Transformer和Param使用示例](https://developer.huawei.com/consumer/cn/forum/topic/0201648630447880382?fid=23)
 * [Spark MLlib之ML Pipeline使用示例](https://developer.huawei.com/consumer/cn/forum/topic/0202648630694530630?fid=23)
+* [Spark GraphX图计算处理概述](https://developer.huawei.com/consumer/cn/forum/topic/0202652669536950721?fid=23)
+* [Spark GraphX图计算示例](https://developer.huawei.com/consumer/cn/forum/topic/0201652741940200499?fid=23)
 * 未完待续...
 
 ## Samples 示例
@@ -75,8 +78,9 @@
 * [Spark Streaming窗口操作](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/streaming/SparkStreamingWimdowSample.java)
 * [Structured Streaming统计来自Socket数据流的词频](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/sql/streaming/StructuredStreamingSocketSample.java)
 * [Structured Streaming窗口操作](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/sql/streaming/StructuredStreamingWindowSample.java)
-* [Estimator、Transformer和Param使用示例](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/sql/ml/EstimatorTransformerParamExample.java)
-* [ML Pipeline使用示例](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/sql/ml/PipelineExample.java)
+* [Estimator、Transformer和Param使用示例](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/ml/EstimatorTransformerParamExample.java)
+* [ML Pipeline使用示例](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/ml/PipelineExample.java)
+* [GraphX图计算示例](samples/spark-java-samples/src/main/java/com/waylau/spark/java/samples/rdd/JavaRddGraphXSample.java)
 * 未完待续...
 
 
