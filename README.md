@@ -52,7 +52,11 @@
 * [Spark MLlib之ML Pipeline使用示例](https://developer.huawei.com/consumer/cn/forum/topic/0202648630694530630?fid=23)
 * [Spark GraphX图计算处理概述](https://developer.huawei.com/consumer/cn/forum/topic/0202652669536950721?fid=23)
 * [Spark GraphX图计算示例](https://developer.huawei.com/consumer/cn/forum/topic/0201652741940200499?fid=23)
+* [spark-shell启动报错“WARN ProcfsMetricsGetter: Exception when trying to compute pagesize, as a result reporting of ProcessTree metrics is stopped”的解决](https://developer.huawei.com/consumer/cn/forum/topic/0204726396055740595?fid=23)
+* [Spark集群部署之集群概述](https://developer.huawei.com/consumer/cn/forum/topic/0203729942975270557?fid=23)
+* [Spark集群之提交应用到集群](https://developer.huawei.com/consumer/cn/forum/topic/0203729943247780558?fid=23)
 * 未完待续...
+
 
 ## Samples 示例
 
