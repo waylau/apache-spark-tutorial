@@ -57,6 +57,9 @@
 * [Spark集群之提交应用到集群](https://developer.huawei.com/consumer/cn/forum/topic/0203729943247780558?fid=23)
 * [Spark集群之使用Standalone模式部署集群](https://developer.huawei.com/consumer/cn/forum/topic/0204730620151950827?fid=23)
 * [Spark集群之Standalone模式集群下的高可用方案](https://developer.huawei.com/consumer/cn/forum/topic/0204730620408550828?fid=23)
+* [Spark系列044——Spark集群之使用YARN模式部署集群](https://developer.huawei.com/consumer/cn/forum/topic/0203732228615380806?fid=23)
+* [Spark系列045——“java.lang.NoClassDefFoundError”问题的解决
+](https://developer.huawei.com/consumer/cn/forum/topic/0201775600270330248?fid=23)
 * 未完待续...
 
 
