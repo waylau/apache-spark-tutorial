@@ -1,0 +1,27 @@
+services:
+  spark-master-1:
+    image: bitnami/spark:3.5.1 # 可替换为适合你环境的Spark镜像  
+    environment:
+      - TZ=Asia/Shanghai # 配置程序默认时区为上海（中国标准时间）
+      - SPARK_MODE=master # Spark集群模式为master 
+    ports:
+      - '8080:8080' # Spark Web UI 
+      - '7077:7077' # Spark Master端口
+    volumes:
+      - /data/spark/master/node-1/app:/opt/bitnami/spark/app # 存放应用的目录
+  spark-worker-1:
+    image: bitnami/spark:3.5.1
+    environment:
+      - TZ=Asia/Shanghai # 配置程序默认时区为上海（中国标准时间）
+      - SPARK_MODE=worker # Spark集群模式为worker
+      - SPARK_MASTER_URL=spark://spark-master-1:7077 # master的URL
+      - SPARK_WORKER_MEMORY=1G # 分配给Worker的内存大小
+      - SPARK_WORKER_CORES=1 # 分配给Worker的CPU核心数
+  spark-worker-2:
+    image: bitnami/spark:3.5.1
+    environment:
+      - TZ=Asia/Shanghai
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master-1:7077 
+      - SPARK_WORKER_MEMORY=1G
+      - SPARK_WORKER_CORES=1

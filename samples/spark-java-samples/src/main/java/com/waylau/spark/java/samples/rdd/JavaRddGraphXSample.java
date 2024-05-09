@@ -24,7 +24,7 @@ public class JavaRddGraphXSample {
 	public static void main(String[] args) {
 		// 要构建一个包含有Spark关应用程序信息的SparkConf对象
 		SparkConf conf = new SparkConf()
-				.setAppName("JavaRddGraphX")// 设置应用名称
+				.setAppName("JavaRddGraphXSample")// 设置应用名称
 				.setMaster("local[4]"); // 本地4核运行
 
 		// 创建一个JavaSparkContext对象，它告诉Spark如何访问群集
