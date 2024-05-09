@@ -8,7 +8,7 @@ services:
       - '8080:8080' # Spark Web UI 
       - '7077:7077' # Spark Master端口
     volumes:
-      - /data/spark/master/node-1/app:/opt/bitnami/spark/app # 存放应用的目录
+      - /data/spark/share/app:/opt/bitnami/spark/app # 存放应用的目录，所有节点都能共享访问
   spark-worker-1:
     image: bitnami/spark:3.5.1
     environment:
@@ -17,6 +17,8 @@ services:
       - SPARK_MASTER_URL=spark://spark-master-1:7077 # master的URL
       - SPARK_WORKER_MEMORY=1G # 分配给Worker的内存大小
       - SPARK_WORKER_CORES=1 # 分配给Worker的CPU核心数
+    volumes:
+      - /data/spark/share/app:/opt/bitnami/spark/app
   spark-worker-2:
     image: bitnami/spark:3.5.1
     environment:
@@ -25,3 +27,5 @@ services:
       - SPARK_MASTER_URL=spark://spark-master-1:7077 
       - SPARK_WORKER_MEMORY=1G
       - SPARK_WORKER_CORES=1
+    volumes:
+      - /data/spark/share/app:/opt/bitnami/spark/app
