@@ -9,15 +9,17 @@ import com.waylau.spark.java.samples.common.Person;
 
 /**
  * Write CVS Example
- * 
- * @since 1.0.0 2021年7月19日
+ *
  * @author <a href="https://waylau.com">Way Lau</a>
+ * @since 1.0.0 2021年7月19日
  */
 public class WriteCVSExample {
     public static void main(String[] args) {
-        SparkSession sparkSession = SparkSession.builder().appName("WriteCVS") // 设置应用名称
-            .master("local") // 本地单线程运行
-            .getOrCreate();
+        SparkSession sparkSession = SparkSession.builder()
+                // 设置应用名称
+                .appName("WriteCVSExample")
+                // 本地单线程运行
+                .master("local").getOrCreate();
 
         // 创建Java Bean
         Person person01 = new Person();
@@ -41,14 +43,23 @@ public class WriteCVSExample {
         Dataset<Person> javaBeanListDS = sparkSession.createDataset(personList, personEncoder);
 
         // 导出为CSV文件
-        javaBeanListDS.write().format("csv") // 文件格式
-            .mode(SaveMode.Overwrite) // 如果第一次生成了，后续会覆盖
-            .option("header", "true").save("target/output/people"); // 保存的文件所在的目录路径
+        javaBeanListDS.write()
+                // 文件格式
+                .format("csv")
+                // 如果第一次生成了，后续会覆盖
+                .mode(SaveMode.Overwrite)
+                .option("header", "true")
+                // 保存的文件所在的目录路径
+                .save("output/people");
 
         // 上述导出方式等同于下面的快捷方式：
         // 导出为CSV文件
-        javaBeanListDS.write().mode(SaveMode.Overwrite) // 如果第一次生成了，后续会覆盖
-            .option("header", "true").csv("target/output/people"); // 保存的文件所在的目录路径
+        javaBeanListDS.write()
+                // 如果第一次生成了，后续会覆盖
+                .mode(SaveMode.Overwrite)
+                .option("header", "true")
+                // 保存的文件所在的目录路径
+                .csv("output/people");
 
         // 关闭SparkSession
         sparkSession.stop();

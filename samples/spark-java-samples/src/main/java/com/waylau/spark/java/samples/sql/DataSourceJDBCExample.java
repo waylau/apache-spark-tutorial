@@ -15,22 +15,22 @@ import org.apache.spark.sql.SparkSession;
  * DataSource with JDBC Example.
  *
  * @author <a href="https://waylau.com">Way Lau</a>
- * @since 2021-08-05
+ * @since 2024-05-11
  */
-
 public class DataSourceJDBCExample {
-    // 数据库配置
-    private static final String URL = "jdbc:h2:~/test";
+    // 数据存在内存；DB_CLOSE_DELAY=10 设置10秒后关闭数据库
+    private static final String URL = "jdbc:h2:mem:test;DB_CLOSE_DELAY=10";
     private static final String DRIVER = "org.h2.Driver";
     private static final String USER = "sa";
     private static final String PASSWORD = "";
-    private static final String TABLE_NAME = "users";
+    private static final String TABLE_NAME = "t_user";
     private static final String CREATE_TABLE_SQL =
-        "create table users ( id  int primary key, name varchar(20), homePage varchar(40) );";
+            "CREATE TABLE t_user " +
+                    "(id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(20), homePage VARCHAR(40));";
     private static final String INSERT_USERS_SQL =
-        "INSERT INTO users" + "  (id, name, homePage ) VALUES " + " (?, ?, ?);";
+            "INSERT INTO t_user ( name, homePage) VALUES ( ?, ?);";
 
-    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+    public static void main(String[] args) throws ClassNotFoundException {
         // 注册JDBC驱动
         Class.forName(DRIVER);
 
@@ -39,17 +39,17 @@ public class DataSourceJDBCExample {
         insertRecord();
 
         SparkSession sparkSession = SparkSession.builder()
-            // 设置应用名称
-            .appName("DataSourceJDBCExample")
-            // 本地单线程运行
-            .master("local").getOrCreate();
+                // 设置应用名称
+                .appName("DataSourceJDBCExample")
+                // 本地单线程运行
+                .master("local").getOrCreate();
 
         // 创建DataFrame
         // 返回一个DataFrameReader，可用于将非流数据作为DataFrame读取
         Dataset<Row> df = sparkSession.read()
-            // JDBC数据源
-            .format("jdbc").option("url", URL).option("driver", DRIVER).option("user", USER)
-            .option("password", PASSWORD).option("dbtable", TABLE_NAME).load();
+                // JDBC数据源
+                .format("jdbc").option("url", URL).option("driver", DRIVER).option("user", USER)
+                .option("password", PASSWORD).option("dbtable", TABLE_NAME).load();
 
         // 将DataFrame的内容显示
         df.show();
@@ -64,8 +64,8 @@ public class DataSourceJDBCExample {
 
         // 返回一个DataFrameReader，可用于将非流数据作为DataFrame读取
         Dataset<Row> dfJDBC = sparkSession.read()
-            // JDBC数据源
-            .jdbc(URL, TABLE_NAME, connectionProperties);
+                // JDBC数据源
+                .jdbc(URL, TABLE_NAME, connectionProperties);
 
         // 将DataFrame的内容显示
         dfJDBC.show();
@@ -78,7 +78,7 @@ public class DataSourceJDBCExample {
         connectionQueryProperties.put("driver", driver);
         connectionQueryProperties.put("user", user);
         connectionQueryProperties.put("password", password);
-        connectionQueryProperties.put("query", "select name, email from users");
+        connectionQueryProperties.put("query", "select name, homePage from t_user");
         
         Dataset<Row> dfQuery = sparkSession
         	// 返回一个DataFrameReader，可用于将非流数据作为DataFrame读取
@@ -90,11 +90,11 @@ public class DataSourceJDBCExample {
         // 创建DataFrame
         // 返回一个DataFrameReader，可用于将非流数据作为DataFrame读取
         Dataset<Row> dfQuery = sparkSession.read()
-            // JDBC数据源
-            .format("jdbc").option("url", URL).option("driver", DRIVER).option("user", USER)
-            .option("password", PASSWORD)
-            // 设置查询语句
-            .option("query", "select name, email from users").load();
+                // JDBC数据源
+                .format("jdbc").option("url", URL).option("driver", DRIVER).option("user", USER)
+                .option("password", PASSWORD)
+                // 设置查询语句
+                .option("query", "select name, homePage from t_user").load();
 
         // 将DataFrame的内容显示
         dfQuery.show();
@@ -102,19 +102,30 @@ public class DataSourceJDBCExample {
         // *** 写入数据 ***
         // 返回一个DataFrameWriter，可用于将DataFrame写入外部存储系统
         dfQuery.write()
-            // JDBC数据源
-            .format("jdbc")
-            // 如果第一次生成了，后续会追加
-            .mode(SaveMode.Append).option("url", URL).option("driver", DRIVER).option("user", USER)
-            .option("password", PASSWORD).option("dbtable", TABLE_NAME).save();
+                // JDBC数据源
+                .format("jdbc")
+                // 如果第一次生成了，后续会追加
+                .mode(SaveMode.Append).option("url", URL).option("driver", DRIVER).option("user", USER)
+                .option("password", PASSWORD).option("dbtable", TABLE_NAME).save();
 
         // 等同于上述方式
         // 返回一个DataFrameWriter，可用于将DataFrame写入外部存储系统
         dfQuery.write()
-            // 如果第一次生成了，后续会追加
-            .mode(SaveMode.Append)
-            // JDBC数据源
-            .jdbc(URL, TABLE_NAME, connectionProperties);
+                // 如果第一次生成了，后续会追加
+                .mode(SaveMode.Append)
+                // JDBC数据源
+                .jdbc(URL, TABLE_NAME, connectionProperties);
+
+        // 再次执行查询
+        dfQuery = sparkSession.read()
+                // JDBC数据源
+                .format("jdbc").option("url", URL).option("driver", DRIVER).option("user", USER)
+                .option("password", PASSWORD)
+                // 设置查询语句
+                .option("query", "select id, name, homePage from t_user").load();
+
+        // 将DataFrame的内容显示
+        dfQuery.show();
 
         // 关闭SparkSession
         sparkSession.stop();
@@ -122,12 +133,12 @@ public class DataSourceJDBCExample {
     }
 
     // 建表
-    private static void createTable() throws SQLException {
+    private static void createTable() {
         System.out.println(CREATE_TABLE_SQL);
         // 建立连接
         try (Connection connection = getConnection();
-            // 创建Statement
-            Statement statement = connection.createStatement();) {
+             // 创建Statement
+             Statement statement = connection.createStatement();) {
 
             // 执行SQL
             statement.execute(CREATE_TABLE_SQL);
@@ -139,15 +150,15 @@ public class DataSourceJDBCExample {
     }
 
     // 插入数据
-    private static void insertRecord() throws SQLException {
+    private static void insertRecord() {
         System.out.println(INSERT_USERS_SQL);
         // 建立连接
         try (Connection connection = getConnection();
-            // 创建PreparedStatement
-            PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
-            preparedStatement.setInt(1, 1);
-            preparedStatement.setString(2, "waylau");
-            preparedStatement.setString(3, "https://waylau.com");
+             // 创建PreparedStatement
+             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
+            // preparedStatement.setInt(1, 1);
+            preparedStatement.setString(1, "Way Lau");
+            preparedStatement.setString(2, "https://waylau.com");
             System.out.println(preparedStatement);
 
             // 执行SQL

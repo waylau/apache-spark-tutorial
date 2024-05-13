@@ -16,24 +16,28 @@ import org.apache.spark.sql.SparkSession;
 
 public class DataSourceBinaryFileExample {
 
-	public static void main(String[] args) {
-		SparkSession sparkSession = SparkSession.builder()
-				.appName("DataSourceBinaryFile") // 设置应用名称
-				.master("local") // 本地单线程运行
-				.getOrCreate();
+    public static void main(String[] args) {
+        SparkSession sparkSession = SparkSession.builder()
+                // 设置应用名称
+                .appName("DataSourceBinaryFileExample")
+                // 本地单线程运行
+                .master("local").getOrCreate();
 
-		// 创建DataFrame
-		Dataset<Row> df = sparkSession.read() // 返回一个DataFrameReader，可用于将非流数据作为DataFrame读取
-				.format("binaryFile") // 二进制文件数据源
-				.option("pathGlobFilter", "*.png") // 设置过滤策略
-				.load("src/main/resources"); // 加载存储于二进制文件格式的Dataset
+        // 创建DataFrame
+        // 返回一个DataFrameReader，可用于将非流数据作为DataFrame读取
+        Dataset<Row> df = sparkSession.read()
+                // 二进制文件数据源
+                .format("binaryFile")
+                // 设置过滤策略
+                .option("pathGlobFilter", "*.png")
+                // 加载存储于二进制文件格式的Dataset
+                .load("./");
 
-		// 将DataFrame的内容显示
-		df.show();
+        // 将DataFrame的内容显示
+        df.show();
 
-		// 关闭SparkSession
-		sparkSession.stop();
-
-	}
+        // 关闭SparkSession
+        sparkSession.stop();
+    }
 
 }
