@@ -21,8 +21,11 @@ public class JavaRddPersistenceSample {
 
     public static void main(String[] args) {
         // 要构建一个包含有Spark关应用程序信息的SparkConf对象
-        SparkConf conf = new SparkConf().setAppName("JavaRddPersistenceSample")// 设置应用名称
-                .setMaster("local[4]"); // 本地4核运行
+        SparkConf conf = new SparkConf()
+                // 设置应用名称
+                .setAppName("JavaRddPersistenceSample")
+                // 本地4核运行
+                .setMaster("local[4]");
 
         // 创建一个JavaSparkContext对象，它告诉Spark如何访问群集
         JavaSparkContext sparkContext = new JavaSparkContext(conf);

@@ -8,20 +8,18 @@ import java.util.Arrays;
 import org.apache.spark.SparkConf;
 import org.apache.spark.streaming.Durations;
 import org.apache.spark.streaming.api.java.JavaDStream;
-import org.apache.spark.streaming.api.java.JavaPairDStream;
 import org.apache.spark.streaming.api.java.JavaReceiverInputDStream;
 import org.apache.spark.streaming.api.java.JavaStreamingContext;
-
-import scala.Tuple2;
+import org.apache.spark.streaming.dstream.DStream;
 
 /**
- * SparkStreaming Wimdow Sample
+ * SparkStreaming saveAsTextFiles Sample
  *
  * @author <a href="https://waylau.com">Way Lau</a>
- * @since 2021-08-09
+ * @since 2024-05-14
  */
 
-public class SparkStreamingWimdowSample {
+public class SparkStreamingSaveAsTextFilesSample {
 
     public static void main(String[] args)
             throws InterruptedException {
@@ -30,7 +28,7 @@ public class SparkStreamingWimdowSample {
                 // 本地多线程运行。不能设置成单线程
                 .setMaster("local[*]")
                 // 设置应用名称
-                .setAppName("SparkStreamingWimdowSample");
+                .setAppName("SparkStreamingSaveAsTextFilesSample");
 
         // Streaming上下文，每隔10秒执行一次获取批量数据然后处理这些数据
         JavaStreamingContext javaStreamingContext =
@@ -46,19 +44,11 @@ public class SparkStreamingWimdowSample {
                 lines.flatMap(x -> Arrays
                         .asList(x.split(" ")).iterator());
 
-        // 统计词频
-        JavaPairDStream<String, Integer> pairs =
-                words.mapToPair(s -> new Tuple2<>(s, 1));
+        // 转为DStream
+        DStream<String> dstream = words.dstream();
 
-        // 每10秒来统计最后30秒数据
-        JavaPairDStream<String, Integer> wordCounts = pairs
-                .reduceByKeyAndWindow((i1, i2) -> i1 + i2,
-                        // 窗口长度
-                        Durations.seconds(30),
-                        // 滑动间隔
-                        Durations.seconds(10));
-        // 输出计数
-        wordCounts.print();
+        // 保存到指定文件
+        dstream.saveAsTextFiles("output/words-output", "txt");
 
         // 启动JavaStreamingContext
         javaStreamingContext.start();

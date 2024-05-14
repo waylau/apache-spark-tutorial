@@ -27,8 +27,10 @@ public class JavaWordCountSample {
         }
 
         // 初始化SparkSession
-        SparkSession sparkSession = SparkSession.builder().appName("JavaWordCountSample") // 设置应用名称
-            .getOrCreate();
+        SparkSession sparkSession = SparkSession.builder()
+                // 设置应用名称
+                .appName("JavaWordCountSample")
+                .getOrCreate();
 
         // 读取文件内容，并转为RDD结构的文本
         JavaRDD<String> lines = sparkSession.read().textFile(args[0]).javaRDD();
