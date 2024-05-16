@@ -26,14 +26,13 @@ public class JavaRddGraphXSample {
     public static void main(String[] args) {
         // 要构建一个包含有Spark关应用程序信息的SparkConf对象
         SparkConf conf = new SparkConf()
-                // 设置应用名称
-                .setAppName("JavaRddGraphXSample")
-                // 本地4核运行
-                .setMaster("local[4]");
+            // 设置应用名称
+            .setAppName("JavaRddGraphXSample")
+            // 本地4核运行
+            .setMaster("local[4]");
 
         // 创建一个JavaSparkContext对象，它告诉Spark如何访问群集
-        JavaSparkContext sparkContext = new JavaSparkContext(
-                conf);
+        JavaSparkContext sparkContext = new JavaSparkContext(conf);
 
         // 初始化Edge，属性是String类型
         List<Edge<String>> edges = new ArrayList<>();
@@ -44,24 +43,25 @@ public class JavaRddGraphXSample {
         edges.add(new Edge<String>(4, 5, "Friend5"));
         edges.add(new Edge<String>(2, 5, "Friend6"));
 
-        JavaRDD<Edge<String>> edgeRDD = sparkContext
-                .parallelize(edges);
+        JavaRDD<Edge<String>> edgeRDD = sparkContext.parallelize(edges);
 
-        ClassTag<String> stringTag = scala.reflect.ClassTag$.MODULE$
-                .apply(String.class);
+        ClassTag<String> stringTag = scala.reflect.ClassTag$.MODULE$.apply(String.class);
 
         // 从Edge初始化Graph
-        Graph<String, String> graph = Graph.fromEdges(
-                edgeRDD.rdd(),
-                "v", // 默认Vertex属性值
-                StorageLevel.MEMORY_ONLY(), // 存储级别为内存
-                StorageLevel.MEMORY_ONLY(), // 存储级别为内存
-                stringTag, // 属性是String类型
-                stringTag); // 属性是String类型
+        Graph<String, String> graph = Graph.fromEdges(edgeRDD.rdd(),
+            // 默认Vertex属性值
+            "v",
+            // 存储级别为内存
+            StorageLevel.MEMORY_ONLY(),
+            // 存储级别为内存
+            StorageLevel.MEMORY_ONLY(),
+            // 属性是String类型
+            stringTag,
+            // 属性是String类型
+            stringTag);
 
         // 打印Vertex
-        graph.vertices().toJavaRDD().collect()
-                .forEach(System.out::println);
+        graph.vertices().toJavaRDD().collect().forEach(System.out::println);
 
         // 关闭JavaSparkContext
         sparkContext.close();
