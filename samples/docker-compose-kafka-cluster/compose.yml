@@ -12,4 +12,4 @@ services:
     ports:
       - '9092:9092' # 端口
     volumes:
-      - /data/kafka/server-1:/bitnami/kafka
+      - /data/kafka:/bitnami/kafka
