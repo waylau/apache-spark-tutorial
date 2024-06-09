@@ -51,7 +51,7 @@ public class SparkStreamingKafkaSample {
 
         // 定义Kafka参数
         Map<String, Object> kafkaParams = new HashMap<>();
-        kafkaParams.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9094");
+        kafkaParams.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "192.168.1.78:9094");
         kafkaParams.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         kafkaParams.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         kafkaParams.put(ConsumerConfig.GROUP_ID_CONFIG, "testGroup");

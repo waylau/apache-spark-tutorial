@@ -22,7 +22,7 @@ public class CustomKafkaProducer {
     public static void main(String[] args) throws Exception {
         // 构造生产者
         Properties p = new Properties();
-        p.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9094");
+        p.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "192.168.1.78:9094");
         p.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
         p.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
 
