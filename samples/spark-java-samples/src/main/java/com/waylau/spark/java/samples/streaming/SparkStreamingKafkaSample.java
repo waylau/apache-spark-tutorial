@@ -56,48 +56,24 @@ public class SparkStreamingKafkaSample {
         kafkaParams.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         kafkaParams.put(ConsumerConfig.GROUP_ID_CONFIG, "testGroup");
 
-        Collection<String> topics = Arrays.asList(TOPIC);// 配置topic，可以是数组
+        // 配置topic
+        Collection<String> topics = Arrays.asList(TOPIC);
 
         JavaInputDStream<ConsumerRecord<String, String>> javaInputDStream =
             KafkaUtils.createDirectStream(javaStreamingContext, LocationStrategies.PreferConsistent(),
                 ConsumerStrategies.Subscribe(topics, kafkaParams));
 
-        JavaPairDStream<String, String> javaPairDStream =
-            javaInputDStream.mapToPair(new PairFunction<ConsumerRecord<String, String>, String, String>() {
-                private static final long serialVersionUID = 1L;
+        JavaPairDStream<String, String> javaPairDStream = javaInputDStream.mapToPair(new PairFunction<>() {
+            private static final long serialVersionUID = 1L;
 
-                @Override
-                public Tuple2<String, String> call(ConsumerRecord<String, String> consumerRecord) throws Exception {
-                    return new Tuple2<>(consumerRecord.key(), consumerRecord.value());
-                }
-            });
-
-        javaPairDStream.foreachRDD(new VoidFunction<JavaPairRDD<String, String>>() {
             @Override
-            public void call(JavaPairRDD<String, String> javaPairRDD) throws Exception {
-                // TODO Auto-generated method stub
-                javaPairRDD.foreach(new VoidFunction<Tuple2<String, String>>() {
-                    @Override
-                    public void call(Tuple2<String, String> tuple2) throws Exception {
-                        // TODO Auto-generated method stub
-                        System.out.println(tuple2._2);
-                    }
-                });
+            public Tuple2<String, String> call(ConsumerRecord<String, String> consumerRecord) throws Exception {
+                return new Tuple2<>(consumerRecord.key(), consumerRecord.value());
             }
         });
 
-        /*JavaInputDStream<ConsumerRecord<String, String>> stream = KafkaUtils.createDirectStream(javaStreamingContext,
-            LocationStrategies.PreferConsistent(), ConsumerStrategies.<String, String>Subscribe(topics, kafkaParams));
-        
-        stream.mapToPair(record -> new Tuple2<>(record.key(), record.value()));
-        
-        stream.foreachRDD(rdd -> {
-            OffsetRange[] offsetRanges = ((HasOffsetRanges)rdd.rdd()).offsetRanges();
-            rdd.foreachPartition(consumerRecords -> {
-                OffsetRange o = offsetRanges[TaskContext.get().partitionId()];
-                System.out.println(o.topic() + " " + o.partition() + " " + o.fromOffset() + " " + o.untilOffset());
-            });
-        });*/
+        javaPairDStream.foreachRDD((VoidFunction<JavaPairRDD<String, String>>)javaPairRDD -> javaPairRDD
+            .foreach((VoidFunction<Tuple2<String, String>>)tuple2 -> System.out.println(tuple2._2)));
 
         // 启动JavaStreamingContext
         javaStreamingContext.start();

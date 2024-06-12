@@ -22,7 +22,11 @@
             </goals>
           </execution>
         </executions>
-        <configuration />
+        <configuration>
+          <transformers>
+            <transformer />
+          </transformers>
+        </configuration>
       </plugin>
     </plugins>
   </build>
